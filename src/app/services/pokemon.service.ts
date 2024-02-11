@@ -9,11 +9,10 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class PokemonService {
 
-  private pokemonUrl = "https://softwium.com/api/pokemons";
+  private pokemonUrl = 'https://softwium.com/api/pokemons';
 
   constructor(
-    private http: HttpClient
-  ) { }
+    private http: HttpClient ) { }
 
   getPokemons() : Observable<Pokemon[]> {
     return this.http.get<Pokemon[]>(this.pokemonUrl);

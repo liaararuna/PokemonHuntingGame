@@ -6,7 +6,7 @@ import { MenuComponent } from './components/menu/menu.component';
 
 const routes: Routes = [
   { path: 'pokemons', component: PokemonsComponent },
-  { path: 'detail/:id', component: PokemondetailComponent },
+  { path: 'pokemons/:id', component: PokemondetailComponent },
   { path: 'menu', component: MenuComponent},
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
   //{ path: '**', component: PageNotFoundComponent }
