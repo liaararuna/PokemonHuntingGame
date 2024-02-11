@@ -1,15 +1,22 @@
-import { NgModule } from '@angular/core';
+import { NgModule, importProvidersFrom } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemondetailComponent } from './components/pokemondetail/pokemondetail.component';
 import { MenuComponent } from './components/menu/menu.component';
+import { HeaderComponent } from './components/header/header.component';
+import { SearchComponent } from './components/search/search.component';
+import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
-  { path: 'pokemons', component: PokemonsComponent },
+  { path: 'pokemons', component: PokemonsComponent, 
+  children: [ 
+    { path: 'pokemons', component: HeaderComponent }
+  ]},
   { path: 'pokemons/:id', component: PokemondetailComponent },
   { path: 'menu', component: MenuComponent},
+  { path: 'serch', component: SearchComponent },
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
-  //{ path: '**', component: PageNotFoundComponent }
+  { path: '**', component: PagenotfoundComponent }
 ];
 
 @NgModule({
