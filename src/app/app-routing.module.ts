@@ -4,7 +4,7 @@ import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemondetailComponent } from './components/pokemondetail/pokemondetail.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
-import { SearchComponent } from './components/search/search.component';
+import { UpdateComponent } from './components/update/update.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 
 const routes: Routes = [
@@ -14,7 +14,7 @@ const routes: Routes = [
   ]},
   { path: 'pokemons/:id', component: PokemondetailComponent },
   { path: 'menu', component: MenuComponent},
-  { path: 'serch', component: SearchComponent },
+  { path: 'edit', component: UpdateComponent },
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent }
 ];

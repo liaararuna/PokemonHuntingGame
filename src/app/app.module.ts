@@ -10,8 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { NgOptimizedImage } from '@angular/common';
-import { SearchComponent } from './components/search/search.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { UpdateComponent } from './components/update/update.component';
 
 @NgModule({
   declarations: [
@@ -20,8 +20,9 @@ import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.co
     PokemondetailComponent,
     MenuComponent,
     HeaderComponent,
-    SearchComponent,
-    PagenotfoundComponent
+    UpdateComponent,
+    PagenotfoundComponent,
+    UpdateComponent
   ],
   imports: [
     BrowserModule,

@@ -22,6 +22,10 @@ export class PokemonsComponent {
     this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
   }
 
+  getPokemon(id: number) : void {
+    this.pokemonService.getPokemon(id).subscribe();
+  }
+
   add(name: string, height: number, weight: number, types: string[], family: string): void {
     name = name.trim();
     family = family.trim();

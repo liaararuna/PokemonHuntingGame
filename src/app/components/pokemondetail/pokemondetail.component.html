@@ -1,13 +1,24 @@
 <!--*ngIf: só mostra o conteúdo dentro do <div> apenas se a propriedade hero não for nula ou indefinida.-->
 <div *ngIf="pokemon">
-    <h2>{{pokemon.name | uppercase}} Details</h2>
-    <div>id: {{pokemon.id}}</div>
-    <div>
-        <label for="pokemon-name">Pokemon name: </label>
-        <input id="pokemon-name" [(ngModel)]="pokemon.name" placeholder="name">
+    <div class="info-title">
+        <h2>Informations about {{pokemon.name | uppercase}}</h2>
     </div>
-    <button type="button" (click)="goBack()">go back</button>
-    <button type="button" (click)="save()">save</button>
+    <div class="informations">
+        <div>Pokemon Id: {{pokemon.id}}</div>
+        <div>Name: </div>
+        <div>Height: {{pokemon.height}}</div>
+        <div>Weight: {{pokemon.weight}}</div>
+        <div>Types: {{pokemon.types}}</div>
+        <div>Family: {{pokemon.family}}</div>
+    </div>
+    <br>
+    <br>
+    <div class="button">
+        <a routerLink="/edit">
+            <button type="button" (click)="goUpdatePage()">Edit Informations</button>
+        </a>
+        <button type="button" (click)="goBack()">Go back</button>
+    </div>
 </div>
 
       

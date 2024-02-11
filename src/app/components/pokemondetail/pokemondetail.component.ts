@@ -18,23 +18,21 @@ export class PokemondetailComponent implements OnInit{
     private pokemonService: PokemonService
   ) {}
 
-    ngOnInit(): void {
-      this.getPokemon();
-    }
+  ngOnInit(): void {
+    this.getPokemon();
+  }
 
-    getPokemon() : void {
-      const id = Number(this.route.snapshot.paramMap.get('id'));
-      this.pokemonService.getPokemon(id).subscribe(pokemon => this.pokemon = pokemon);
-    }
+  getPokemon() : void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.pokemonService.getPokemon(id).subscribe(pokemon => this.pokemon = pokemon);
+  }
 
-    goBack(): void {
-      this.location.back();
-    }
-  
-    save(): void {
-      if (this.pokemon) {
-        this.pokemonService.updatePokemon(this.pokemon)
-          .subscribe(() => this.goBack());
-      }
-    }
+  goBack(): void {
+    this.location.back();
+  }
+
+  goUpdatePage() : void {
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.location.go(`/pokemons/${id}`);
+  }
 }
