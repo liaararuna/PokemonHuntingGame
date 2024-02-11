@@ -1,0 +1,13 @@
+<!--*ngIf: só mostra o conteúdo dentro do <div> apenas se a propriedade hero não for nula ou indefinida.-->
+<div *ngIf="pokemon">
+    <h2>{{pokemon.name | uppercase}} Details</h2>
+    <div>id: {{pokemon.id}}</div>
+    <div>
+        <label for="pokemon-name">Pokemon name: </label>
+        <input id="pokemon-name" [(ngModel)]="pokemon.name" placeholder="name">
+    </div>
+    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" (click)="save()">save</button>
+</div>
+
+      

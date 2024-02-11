@@ -1,1 +1,7 @@
-<p>pokemons works!</p>
+<h2>My Pokemons</h2>
+<ul class="pokemons">
+  <!--Utiliza a diretiva estrutural *ngFor para iterar sobre cada elemento no array heroes e criar um item de lista <li> para cada herói. define uma variável local hero que será usada para representar cada item no array heroes.-->
+  <li *ngFor="let pokemon of pokemons">
+      <span class="badge">{{pokemon.id}}</span>
+      <span class="name">{{pokemon.name}}</span>
+</ul>

@@ -21,4 +21,21 @@ export class PokemonsComponent {
   getPokemons() : void {
     this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
   }
+
+  add(name: string, height: number, weight: number, types: string[], family: string): void {
+    name = name.trim();
+    family = family.trim();
+    if (!name && !height && !weight && types == null && !family) {
+       return; 
+    }
+    this.pokemonService.addPokemon({ name, height, weight, types, family } as Pokemon)
+      .subscribe(pokemon => {
+        this.pokemons.push(pokemon);
+      });
+  }
+
+  delete(pokemon: Pokemon): void {
+    this.pokemons = this.pokemons.filter(p => p !== pokemon);
+    this.pokemonService.deletePokemon(pokemon.id).subscribe();
+  }
 }
