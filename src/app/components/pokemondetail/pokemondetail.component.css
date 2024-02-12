@@ -3,10 +3,22 @@ h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-top: 100px;
+  margin-top: 80px;
   font-size: 40px;
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-content: baseline;
+  margin-top: 50px;
+}
+
+img {
+  height: 300px;
+  width: 300px;
 }
 
 .info-title {
@@ -15,7 +27,7 @@ h2 {
 }
 
 .informations {
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 30px;
   font-size: 25px;
   line-height: 1.5;
@@ -23,10 +35,12 @@ h2 {
 
 .button {
   margin-left: 20px;
+  display: flex;
+  justify-content: center;
 }
 
 button {
-  margin-top: 20px;
+  margin-top: 10px;
   margin-right: 1.5rem;
   background-color: #eee;
   padding: 1rem;
@@ -44,4 +58,38 @@ button:disabled {
   background-color: #eee;
   color: #ccc;
   cursor: auto;
+}
+
+.edit-box {
+  margin-top: 100px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+.sec-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.info-label {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.input-box {
+  padding: 5px;
+  margin-left: 15px;
+  font-size: 20px;
+  width: 20%; 
+  margin-bottom: 10px; 
+  box-sizing: border-box;
 }

@@ -4,17 +4,18 @@ import { PokemonsComponent } from './components/pokemons/pokemons.component';
 import { PokemondetailComponent } from './components/pokemondetail/pokemondetail.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { HeaderComponent } from './components/header/header.component';
-import { UpdateComponent } from './components/update/update.component';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
+import { AddComponent } from './components/add/add.component';
 
 const routes: Routes = [
   { path: 'pokemons', component: PokemonsComponent, 
-  children: [ 
+    children: [ 
     { path: 'pokemons', component: HeaderComponent }
-  ]},
-  { path: 'pokemons/:id', component: PokemondetailComponent },
+    ]
+  },
+  { path: 'pokemons/:id', component: PokemondetailComponent, },
   { path: 'menu', component: MenuComponent},
-  { path: 'edit', component: UpdateComponent },
+  { path: 'add', component: AddComponent},
   { path: '', redirectTo: '/menu', pathMatch: 'full' },
   { path: '**', component: PagenotfoundComponent }
 ];

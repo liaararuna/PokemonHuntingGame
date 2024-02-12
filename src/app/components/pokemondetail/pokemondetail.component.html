@@ -3,6 +3,10 @@
     <div class="info-title">
         <h2>Informations about {{pokemon.name | uppercase}}</h2>
     </div>
+    <div class="container">
+    <div class="img-pokemon">
+        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt="{{pokemon.name}} image">
+    </div>
     <div class="informations">
         <div>Pokemon Id: {{pokemon.id}}</div>
         <div>Name: </div>
@@ -11,13 +15,47 @@
         <div>Types: {{pokemon.types}}</div>
         <div>Family: {{pokemon.family}}</div>
     </div>
+    </div>
     <br>
     <br>
     <div class="button">
-        <a routerLink="/edit">
-            <button type="button" (click)="goUpdatePage()">Edit Informations</button>
-        </a>
+        <button type="button" (click)="showAdditionalInfo()">Edit Informations</button>
         <button type="button" (click)="goBack()">Go back</button>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class="edit-box" *ngIf="additionalInfo">
+        <h2>Change data</h2>
+        <div class="sec-container">
+            <div class="input-container">
+                <label for="name" class="info-label">Name:</label>
+                <input type="text" [(ngModel)]="pokemon.name" placeholder="Insert a name" class="input-box">
+            </div>
+            <div class="input-container">
+                <label for="height" class="info-label">Height:</label>
+                <input type="number" [(ngModel)]="pokemon.height" placeholder="Insert a height" class="input-box">
+            </div>
+            <div class="input-container">
+                <label for="weight" class="info-label">Weight:</label>
+                <input type="number" [(ngModel)]="pokemon.weight" placeholder="Insert a weight" class="input-box">
+            </div>
+            <div class="input-container">
+                <label for="type" class="info-label">Type:</label>
+                <input type="text" [(ngModel)]="pokemon.types" placeholder="Insert a type" class="input-box">
+            </div>
+            <div class="input-container">
+            <label for="family" class="info-label">Family:</label>
+            <input type="text" [(ngModel)]="pokemon.family" placeholder="Insert a family name" class="input-box">
+            </div>
+        </div>
+        <div class="button">
+            <button type="button" (click)="save()">Confirm</button>
+            <div *ngIf="confirmationMessage" class="confirmation-message">
+                {{confirmationMessage}}
+            </div>    
+            <button type="button" (click)="goBack()">Cancel</button>
+        </div>
     </div>
 </div>
 

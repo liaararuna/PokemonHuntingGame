@@ -11,7 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { NgOptimizedImage } from '@angular/common';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { UpdateComponent } from './components/update/update.component';
+import { SecureconnectionInterceptor } from './interceptors/secureconnection.interceptor';
+import { AddComponent } from './components/add/add.component';
 
 @NgModule({
   declarations: [
@@ -20,18 +21,18 @@ import { UpdateComponent } from './components/update/update.component';
     PokemondetailComponent,
     MenuComponent,
     HeaderComponent,
-    UpdateComponent,
     PagenotfoundComponent,
-    UpdateComponent
+    AddComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    FormsModule
   ],
-  providers: [],
+  providers: [SecureconnectionInterceptor],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

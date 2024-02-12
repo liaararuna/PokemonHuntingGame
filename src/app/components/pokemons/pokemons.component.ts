@@ -18,28 +18,20 @@ export class PokemonsComponent {
     this.getPokemons();
   }
 
+  //Returns a list of pokemons
   getPokemons() : void {
     this.pokemonService.getPokemons().subscribe(pokemons => this.pokemons = pokemons);
   }
 
+  //Returns informations about an specific pokemon using your id number.
   getPokemon(id: number) : void {
     this.pokemonService.getPokemon(id).subscribe();
   }
 
-  add(name: string, height: number, weight: number, types: string[], family: string): void {
-    name = name.trim();
-    family = family.trim();
-    if (!name && !height && !weight && types == null && !family) {
-       return; 
-    }
-    this.pokemonService.addPokemon({ name, height, weight, types, family } as Pokemon)
-      .subscribe(pokemon => {
-        this.pokemons.push(pokemon);
-      });
-  }
-
+  //Allows you to delete a pokemon from the database.
   delete(pokemon: Pokemon): void {
     this.pokemons = this.pokemons.filter(p => p !== pokemon);
     this.pokemonService.deletePokemon(pokemon.id).subscribe();
   }
+
 }

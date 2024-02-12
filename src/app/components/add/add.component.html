@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Add a Pokemon</h2>
+    <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" class="form-control" id="name" required [(ngModel)]="pokemon.name" name="name" #name="ngModel" placeholder="Insert a name">
+        <label for="height">Height:</label>
+        <input type="number" class="form-control" id="height" required [(ngModel)]="pokemon.height" name="height" #height="ngModel" placeholder="Insert pokemon height">
+        <label for="weight">Weight:</label>
+        <input type="number" class="form-control" id="weight" required [(ngModel)]="pokemon.weight" name="weight" #weight="ngModel" placeholder="Insert pokemon weight">
+        <label for="type">Type:</label>
+        <input type="text" class="form-control" id="type" required [(ngModel)]="pokemon.types" name="type" #type="ngModel" placeholder="Insert a type name">
+        <label for="family">Family:</label>
+        <input type="text" class="form-control" id="family" required [(ngModel)]="pokemon.family" name="family" #family="ngModel" placeholder="Insert a family name">
+    </div>
+    <div class="button">
+        <button type="button" class="save" (click)="add(pokemon.name, +pokemon.height, +pokemon.weight, pokemon.types, pokemon.family)">Add</button>
+        <button type="button" class="cancel" (click)="goBack()">Cancel</button>
+    </div>
+</div>

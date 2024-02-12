@@ -8,18 +8,21 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class PokemonService {
 
-  private pokemonUrl = 'https://softwium.com/api/pokemons';
+  private pokemonUrl = 'http://softwium.com/api/pokemons';
 
   constructor(
     private http: HttpClient ) { }
  
 
   getPokemons() : Observable<Pokemon[]> {
+    // let v = this.http.get<Pokemon[]>(this.pokemonUrl).subscribe((pokemons: Pokemon[]) => {
+    //   console.log('Lista de Pokémons:', pokemons);
+    // });
+    // console.log(v);
     return this.http.get<Pokemon[]>(this.pokemonUrl);
   }
 
   getPokemon(id: number): Observable<Pokemon> {
-    //Constructs a request URL with the desired hero's id
     const url = `${this.pokemonUrl}/${id}`;
     return this.http.get<Pokemon>(url);
   }
@@ -41,7 +44,6 @@ export class PokemonService {
   /** DELETE: delete the hero from the server */
   deletePokemon(id: number): Observable<Pokemon> {
     const url = `${this.pokemonUrl}/${id}`;
-
     return this.http.delete<Pokemon>(url, this.httpOptions)
   }
 

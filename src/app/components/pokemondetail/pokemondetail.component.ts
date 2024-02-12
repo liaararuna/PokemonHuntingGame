@@ -11,6 +11,8 @@ import { Location } from '@angular/common';
 })
 export class PokemondetailComponent implements OnInit{
   pokemon: Pokemon | undefined
+  additionalInfo = false;
+  confirmationMessage = '';
 
   constructor(
     private route: ActivatedRoute,
@@ -27,12 +29,28 @@ export class PokemondetailComponent implements OnInit{
     this.pokemonService.getPokemon(id).subscribe(pokemon => this.pokemon = pokemon);
   }
 
+  //AJUSTAR!!!
   goBack(): void {
     this.location.back();
   }
 
-  goUpdatePage() : void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.location.go(`/pokemons/${id}`);
+  showAdditionalInfo(): void {
+    this.additionalInfo = true;
   }
+
+  save(): void {
+    if (this.pokemon) {
+      this.pokemonService.updatePokemon(this.pokemon)
+        .subscribe({
+          next: updatedPokemon => {
+            this.pokemon = updatedPokemon;
+            this.confirmationMessage = 'Pokemon updated successfully!';
+          },
+          error: error => {
+            this.confirmationMessage = 'Failed to update Pokemon.';
+            console.error(error);
+          }
+        });
+    }
+  } 
 }
