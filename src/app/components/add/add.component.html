@@ -14,6 +14,9 @@
     </div>
     <div class="button">
         <button type="button" class="save" (click)="add(pokemon.name, +pokemon.height, +pokemon.weight, pokemon.types, pokemon.family)">Add</button>
+        <div *ngIf="confirmationMsg" class="confirmation-message">
+            {{confirmationMsg}}
+        </div>  
         <button type="button" class="cancel" (click)="goBack()">Cancel</button>
     </div>
 </div>

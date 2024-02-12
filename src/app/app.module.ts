@@ -13,6 +13,7 @@ import { NgOptimizedImage } from '@angular/common';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
 import { SecureconnectionInterceptor } from './interceptors/secureconnection.interceptor';
 import { AddComponent } from './components/add/add.component';
+import { CapitalizePipe } from './pipes/capitalize.pipe';
 
 @NgModule({
   declarations: [
@@ -23,6 +24,7 @@ import { AddComponent } from './components/add/add.component';
     HeaderComponent,
     PagenotfoundComponent,
     AddComponent,
+    CapitalizePipe,
   ],
   imports: [
     BrowserModule,

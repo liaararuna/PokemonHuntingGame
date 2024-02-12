@@ -8,12 +8,16 @@
         <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt="{{pokemon.name}} image">
     </div>
     <div class="informations">
-        <div>Pokemon Id: {{pokemon.id}}</div>
-        <div>Name: </div>
+        <div>Id: {{pokemon.id}}</div>
+        <div>Name: {{pokemon.name | capitalize}}</div>
         <div>Height: {{pokemon.height}}</div>
         <div>Weight: {{pokemon.weight}}</div>
-        <div>Types: {{pokemon.types}}</div>
-        <div>Family: {{pokemon.family}}</div>
+        <div>Types: 
+            <span *ngFor="let type of pokemon.types; let last = last">
+                {{type | capitalize}}{{!last ? ', ' : ''}}
+            </span>
+        </div>  
+        <div>Family: {{pokemon.family | capitalize}}</div>
     </div>
     </div>
     <br>
@@ -22,7 +26,6 @@
         <button type="button" (click)="showAdditionalInfo()">Edit Informations</button>
         <button type="button" (click)="goBack()">Go back</button>
     </div>
-    <br>
     <br>
     <br>
     <div class="edit-box" *ngIf="additionalInfo">

@@ -29,23 +29,6 @@ export class AddComponent {
 
   goBack(): void {
     this.location.back();
-  }
-
-  save(): void {
-    if (this.pokemon) {
-      this.pokemonService.addPokemon(this.pokemon)
-        .subscribe({
-          next: addedPokemon => {
-            this.pokemon = addedPokemon;
-            this.confirmationMsg = 'Pokemon created successfully!';
-          },
-          error: error => {
-            this.confirmationMsg = 'Failed to create a Pokemon.';
-            console.error(error);
-          }
-        }
-      );
-    }
   } 
 
   //Allows you to create a new pokemon
