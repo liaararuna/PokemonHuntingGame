@@ -1,7 +1,7 @@
 <!--*ngIf: só mostra o conteúdo dentro do <div> apenas se a propriedade hero não for nula ou indefinida.-->
 <div *ngIf="pokemon">
     <div class="info-title">
-        <h2>Informations about {{pokemon.name | uppercase}}</h2>
+        <h2>Informations about {{pokemon.name | capitalize}}</h2>
     </div>
     <div class="container">
     <div class="img-pokemon">
@@ -53,12 +53,12 @@
             </div>
         </div>
         <div class="button">
-            <button type="button" (click)="save()">Confirm</button>
-            <div *ngIf="confirmationMessage" class="confirmation-message">
-                {{confirmationMessage}}
-            </div>    
+            <button type="button" (click)="save(+pokemon.id, pokemon.name, +pokemon.height, +pokemon.weight, pokemon.types, pokemon.family)">Confirm</button>
             <button type="button" (click)="goBack()">Cancel</button>
         </div>
+        <div *ngIf="confirmationMessage" class="confirmation-message">
+            {{confirmationMessage}}
+        </div>    
     </div>
 </div>
 

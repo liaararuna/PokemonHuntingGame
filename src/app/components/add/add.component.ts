@@ -21,6 +21,7 @@ export class AddComponent {
   pokemons: Pokemon[] = [];
 
   confirmationMsg = '';
+  sucess = false;
 
   constructor(
     private pokemonService: PokemonService,
@@ -50,6 +51,7 @@ export class AddComponent {
     .subscribe({
       next: addedPokemon => { 
         this.pokemons.push(addedPokemon);
+        this.sucess = true;
         this.confirmationMsg = 'Pokemon added successfully!';
       },
       error: error => {

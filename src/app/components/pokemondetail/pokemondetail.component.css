@@ -1,4 +1,4 @@
-/* HeroDetailComponent's private CSS styles */
+
 h2 {
   display: flex;
   justify-content: center;
@@ -23,7 +23,7 @@ img {
 
 .info-title {
   display: block;
-  background-color: orange;
+  background-color: #f6884a;
 }
 
 .informations {
@@ -61,22 +61,12 @@ button:disabled {
 }
 
 .edit-box {
-  margin-top: 100px;
-  margin-left: 30px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
 }
 
-.sec-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .input-container {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
   margin-bottom: 10px;
 }
 
@@ -92,4 +82,12 @@ button:disabled {
   width: 20%; 
   margin-bottom: 10px; 
   box-sizing: border-box;
+}
+
+.confirmation-message {
+  font-size: 25px;
+  text-align: center;
+  color: #f6884a;
+  margin-top: 30px;
+  margin-bottom: 60px;
 }

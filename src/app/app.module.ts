@@ -11,9 +11,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { HeaderComponent } from './components/header/header.component';
 import { NgOptimizedImage } from '@angular/common';
 import { PagenotfoundComponent } from './components/pagenotfound/pagenotfound.component';
-import { SecureconnectionInterceptor } from './interceptors/secureconnection.interceptor';
 import { AddComponent } from './components/add/add.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
+import { httpInterceptorProviders } from './httpinterceptorproviders';
+import { CustomAttributeDirective } from './directives/custom-attribute.directive';
 
 @NgModule({
   declarations: [
@@ -25,6 +26,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     PagenotfoundComponent,
     AddComponent,
     CapitalizePipe,
+    CustomAttributeDirective,
   ],
   imports: [
     BrowserModule,
@@ -34,7 +36,7 @@ import { CapitalizePipe } from './pipes/capitalize.pipe';
     NgOptimizedImage,
     FormsModule
   ],
-  providers: [SecureconnectionInterceptor],
+  providers: [httpInterceptorProviders],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

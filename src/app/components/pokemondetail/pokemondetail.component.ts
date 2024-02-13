@@ -38,19 +38,30 @@ export class PokemondetailComponent implements OnInit{
     this.additionalInfo = true;
   }
 
-  save(): void {
-    if (this.pokemon) {
-      this.pokemonService.updatePokemon(this.pokemon)
-        .subscribe({
-          next: updatedPokemon => {
-            this.pokemon = updatedPokemon;
-            this.confirmationMessage = 'Pokemon updated successfully!';
-          },
-          error: error => {
-            this.confirmationMessage = 'Failed to update Pokemon.';
-            console.error(error);
-          }
-        });
+  save(id: number, name: string, height: number, weight: number, types: string[], family: string): void {
+    name = name.trim();
+    family = family.trim();
+
+    if (!name && !types && !family) {
+      console.error('Name, types and/or family cannot be empty')
+       return; 
+    }
+
+    if(height <= 0 || weight <= 0) {
+      console.error('Height and weight must be greater than zero.');
+      return;
+    }
+    
+    this.pokemonService.updatePokemon({ id, name, height, weight, types, family } as Pokemon)
+      .subscribe({
+        next: updatedPokemon => {
+          this.pokemon = updatedPokemon;
+          this.confirmationMessage = 'Pokemon updated successfully!';
+        },
+        error: error => {
+          this.confirmationMessage = 'Failed to update Pokemon.';
+          console.error(error);
+        }
+      });
     }
   } 
-}

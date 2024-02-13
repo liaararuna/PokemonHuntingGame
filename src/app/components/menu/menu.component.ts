@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Pokemon } from 'src/app/domain/pokemon';
 import { PokemonService } from 'src/app/services/pokemon.service';
 import { HeaderComponent } from '../header/header.component';
+import { CustomAttributeDirective } from 'src/app/directives/custom-attribute.directive';
 
 
 @Component({
