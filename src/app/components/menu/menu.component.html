@@ -1,9 +1,11 @@
 <h2 appCustomAttribute>Top Pokemons</h2>
-<div class="pokemons-menu">
-  <a *ngFor="let pokemon of pokemons" routerLink="/pokemons/{{pokemon.id}}" class="menu-item">
-    {{pokemon.name | capitalize}}
+<div class="pokemons-grid">
+  <a *ngFor="let pokemon of pokemons" routerLink="/pokemons/{{pokemon.id}}" class="pokemon-card">
+    <div class="card-header">
+      {{pokemon.name | capitalize}}
+    </div>
     <div class="img-pokemon">
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png" alt="{{pokemon.name}} image">
-  </div>
+    </div>
   </a>
 </div>

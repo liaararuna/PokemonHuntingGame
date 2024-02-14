@@ -1,0 +1,12 @@
+<h2>Login</h2>
+<div class="form-group">
+    <label for="email">E-mail: </label>
+    <input type="text" id="email" class="form-control" placeholder="Enter Your Email">
+    <label for="senha">Password: </label>
+    <input type="password" id="password" class="form-control" placeholder="Enter Your Password">
+</div>    
+<div class="button">
+    <button class="btn-success" type="submit" (click)="goPrivateZone()" (change)="login(true)">Login</button>
+    <button type="button" (click)="goBack()" (change)="login(false)">Cancel</button>
+</div>
+

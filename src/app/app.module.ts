@@ -15,6 +15,8 @@ import { AddComponent } from './components/add/add.component';
 import { CapitalizePipe } from './pipes/capitalize.pipe';
 import { httpInterceptorProviders } from './httpinterceptorproviders';
 import { CustomAttributeDirective } from './directives/custom-attribute.directive';
+import { LoginComponent } from './components/login/login.component';
+import { PrivateComponent } from './components/private/private.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +29,8 @@ import { CustomAttributeDirective } from './directives/custom-attribute.directiv
     AddComponent,
     CapitalizePipe,
     CustomAttributeDirective,
+    LoginComponent,
+    PrivateComponent,
   ],
   imports: [
     BrowserModule,
